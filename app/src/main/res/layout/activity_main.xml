@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#a0ddff"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/toolbar_icon"
+            android:onClick="returnFirst"
+            android:textColor="@android:color/background_light"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/textSearchAddr"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@android:drawable/editbox_background_normal"
+                android:ems="16"
+                android:gravity="center"
+                android:hint="검색할 장소를 입력해주세요(동,읍,면)"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/Search_btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/searchaddr_search"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3B6D90"
+        android:orientation="horizontal" />
+
+    <FrameLayout
+        android:id="@+id/fragmentHere"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical">
+        <!-- 플로팅 액션 버튼 추가 -->
+        <!--
+        1. 버튼 색깔 바꿀려면 theme 옵션을 사용하여 colorAccent 색깔을 바꾼다
+
+        3. 이미지 변경은 src 옵션에서 한다
+        -->
+    </FrameLayout>
+
+
+</LinearLayout>

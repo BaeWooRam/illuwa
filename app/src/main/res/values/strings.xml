@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">일루와</string>
+    <string name="title_activity_circle_button">CircleButton</string>
+    <string name="str_done">완료</string>
+
+    <string-array name="search_radius">
+        <item>500m</item>
+        <item>800m</item>
+        <item>1km</item>
+        <item>1.2km</item>
+    </string-array>
+</resources>

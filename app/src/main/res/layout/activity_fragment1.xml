@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.nhn.android.maps.NMapView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/mapView">
+
+    </com.nhn.android.maps.NMapView>
+
+    <Button
+        android:id="@+id/btnOption"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/navermap_option_btn" />
+
+    <Button
+        android:id="@+id/btnZoomout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="51dp"
+        android:layout_gravity="bottom|left"
+        android:background="@drawable/navermap_zoomout"/>
+
+    <Button
+        android:id="@+id/btnZoomin"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom|left"
+        android:background="@drawable/navermap_zoomin" />
+
+
+    <Button
+        android:id="@+id/btnNavi"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|right"
+        android:layout_margin="10dp"
+        android:background="@drawable/navermap_location_off" />
+
+    <Button
+        android:id="@+id/btnFAB_1"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="23dp"
+        android:background="@drawable/fab_magnifier"
+        android:elevation="16dp" />
+
+    <Button
+        android:id="@+id/btnFAB_2"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="23dp"
+        android:elevation="16dp"
+        android:background="@drawable/fab_filter"
+        />
+
+    <Button
+        android:id="@+id/btnFAB_3"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="23dp"
+        android:elevation="16dp"
+        android:background="@drawable/fab_map"
+        />
+
+    <Button
+        android:id="@+id/btnFAB_4"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="23dp"
+        android:elevation="16dp"
+        android:background="@drawable/fab_center"
+        android:visibility="gone"
+
+        />
+
+    <Button
+        android:id="@+id/Non"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:background="@drawable/fab_menu_xmark"
+        android:elevation="16dp" />
+
+    <Button
+        android:id="@+id/btnFAB_Top"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:background="@drawable/fab_menu_xmark"
+        android:elevation="16dp" />
+
+    <TextView
+        android:id="@+id/btn_help_1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="75dp"
+        android:background="@drawable/round_rec"
+        android:ems="4"
+        android:gravity="center"
+        android:text="주소검색"
+        android:textColor="#2d2b2b"
+        android:textSize="16sp"
+        android:textStyle="normal|bold"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/btn_help_2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="75dp"
+        android:background="@drawable/round_rec"
+        android:ems="4"
+        android:gravity="center"
+        android:text="주변정보"
+        android:textColor="#2d2b2b"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/btn_help_3"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="75dp"
+        android:background="@drawable/round_rec"
+        android:ems="4"
+        android:gravity="center"
+        android:text="인원설정"
+        android:textColor="#2d2b2b"
+        android:textSize="16sp"
+        android:textStyle="normal|bold"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/btn_help_4"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="75dp"
+        android:background="@drawable/round_rec_midlepoint"
+        android:ems="4"
+        android:gravity="center"
+        android:text="중간위치"
+        android:textColor="#2d2b2b"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+</FrameLayout>

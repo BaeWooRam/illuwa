@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="standard_58">58dp</dimen>
+    <dimen name="standard_108">108dp</dimen>
+    <dimen name="standard_158">158dp</dimen>
+    <dimen name="standard_208">208dp</dimen>
+
+    <item type="dimen" name="dialog_min_width_major">95%</item>
+    <item type="dimen" name="dialog_min_width_minor">95%</item>
+    <item type="dimen" name="dialog_text_size">40</item>
+
+</resources>
