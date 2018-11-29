@@ -1,4 +1,4 @@
-package com.geek.soft.illuwa;
+package com.geek.soft.illuwa.ui.main;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -35,6 +35,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.geek.soft.illuwa.ui.ActivityGuide;
+import com.geek.soft.illuwa.ui.IlluwaApplication;
+import com.geek.soft.illuwa.naverapi.NMapFragment;
+import com.geek.soft.illuwa.R;
 import com.geek.soft.illuwa.category.CategoryAdapter;
 import com.geek.soft.illuwa.category.CategoryBin;
 import com.geek.soft.illuwa.naverapi.AppPermission;
@@ -341,15 +345,20 @@ public class Fragment1 extends NMapFragment implements View.OnClickListener, Ada
                     poiDataOverlay.setOnFloatingItemChangeListener(new NMapPOIdataOverlay.OnFloatingItemChangeListener() {
                         @Override
                         public void onPointChanged(NMapPOIdataOverlay nMapPOIdataOverlay, NMapPOIitem nMapPOIitem) {
-                            int index = nMapPOIitem.getId()-10000;
-
-                            NGeoPoint point = nMapPOIitem.getPoint();
-                            if(geoPoints_Click != null){
-                                if(geoPoints_Click.size() > 0){
-                                    geoPoints_Click.remove(index);
+                            if(ClickMarker_MAX>DEFALUT_MARKER_ID){
+                                int index = nMapPOIitem.getId()-10000;
+                                Log.i("ID","index : "+index);
+                                Log.i("ID","SIZE : "+geoPoints_Click.size()+"");
+                                for(int i = 0; i< geoPoints_Click.size();i++){
+                                    Log.i("ID","value : "+geoPoints_Click.get(i));
                                 }
-                                if(ClickMarker_MAX>ClickMarker_id)
+                                NGeoPoint point = nMapPOIitem.getPoint();
+                                if(geoPoints_Click != null){
+                                    if(geoPoints_Click.size() > 0){
+                                        geoPoints_Click.remove(index);
+                                    }
                                     geoPoints_Click.add(index,point);
+                                }
                             }
                         }
                     });
@@ -622,6 +631,9 @@ public class Fragment1 extends NMapFragment implements View.OnClickListener, Ada
                             //중앙 마크 지우기
                             PoidataClear(Center_poidata,controller);
 
+                            //중앙 마크 지우기
+                            if(mOverlayManager != null)
+                                mOverlayManager.clearOverlays();
 
                             //적은 인원수에 대한 예외 처리
                             if((et.getText().toString()).equals("")) {
@@ -1033,7 +1045,9 @@ public class Fragment1 extends NMapFragment implements View.OnClickListener, Ada
         ArrayList<NGeoPoint> arrayGeoPoint= new ArrayList<NGeoPoint>();                             //지도API JSON파서에서 가져온 값을 좌표로 변환한 값 저장, 클릭 시 좌표 저장
         ArrayList<String> arrayTitle= new ArrayList<String>();
         ArrayList<HashMap<String, String>> arrayAddress = new ArrayList<HashMap<String,String>>();  // 지역API JSON파서에서 가져온 값을 저장
-        int display = 100,start = 1;
+
+        //2018.10.15 지역검색API 최대 출력 건수 100 -> 30 변경
+        int display = 30,start = 1;
 
         @Override
         protected String doInBackground(String... strings) {
@@ -1045,14 +1059,13 @@ public class Fragment1 extends NMapFragment implements View.OnClickListener, Ada
             for(;start<=1001; start += 100){
                 if(start==1001)
                     start = 1000;
-                String result = api.SearchLocalInfo(api.SearchLocal_ClientID,api.SearchLocal_ClientSecret,query[index],display,start);
+                String result = api.SearchLocalInfo(api.SearchLocal_ClientID,api.SearchLocal_ClientSecret,query[index],display,start);  // 문제
                 System.out.println(result);
                 LocalInfo_Result.add(result);
             }
 
             /*----------얻은 지역 정보를 분석해서 저장------------*/
             int cnt = api.SearchLocalParser(LocalInfo_Result, arrayAddress);
-            Log.i("Cnt"," size : "+cnt);
             if(cnt != 0){
                 for(int i =0; i < cnt; i++){
                     //arrayAddress에 있는 각 정보들을 카텍 -> 경위도 변경
@@ -1108,9 +1121,10 @@ public class Fragment1 extends NMapFragment implements View.OnClickListener, Ada
         @Override
         protected void onPostExecute(String s) {
 
-            //생성된 arrayGeoPoint의 사이즈를 반환해서 Log에 나타낸다. <-- 오류 파악을 위해
             int arraySize = arrayGeoPoint.size();
 
+            // arraySize 확인
+            Log.i("test","data : " + arraySize);
 
             if(arraySize>0){
                 //NAVER MAP 뷰어 상 나타내기 위한 여러 설정들

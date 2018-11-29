@@ -1,4 +1,4 @@
-package com.geek.soft.illuwa;
+package com.geek.soft.illuwa.ui.main;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -10,6 +10,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+
+import com.geek.soft.illuwa.ui.ActivityGuide;
+import com.geek.soft.illuwa.R;
 
 
 public class MainActivity extends FragmentActivity{

@@ -1,4 +1,4 @@
-package com.geek.soft.illuwa;
+package com.geek.soft.illuwa.ui;
 
 
 import android.app.ActivityManager;
@@ -21,6 +21,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.geek.soft.illuwa.R;
 
 import java.util.ArrayList;
 import java.util.List;

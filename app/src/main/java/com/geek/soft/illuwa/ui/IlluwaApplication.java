@@ -1,4 +1,4 @@
-package com.geek.soft.illuwa;
+package com.geek.soft.illuwa.ui;
 
 import android.app.Application;
 import android.os.SystemClock;

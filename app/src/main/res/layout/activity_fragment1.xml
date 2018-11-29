@@ -60,13 +60,12 @@
         android:id="@+id/btnFAB_2"
         android:layout_width="43dp"
         android:layout_height="43dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|right"
         android:layout_margin="23dp"
-        android:elevation="16dp"
         android:background="@drawable/fab_filter"
-        />
+        android:elevation="16dp" />
 
     <Button
         android:id="@+id/btnFAB_3"

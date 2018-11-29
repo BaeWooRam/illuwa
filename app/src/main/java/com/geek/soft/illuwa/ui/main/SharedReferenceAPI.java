@@ -1,4 +1,4 @@
-package com.geek.soft.illuwa;
+package com.geek.soft.illuwa.ui.main;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -102,6 +102,7 @@ import java.util.HashMap;
             apiURL+="&display=" + Display;
             apiURL+="&start=" + Start;
             apiURL+="&sort=" + "comment";
+            Log.i("test","---------hong"+apiURL);
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");

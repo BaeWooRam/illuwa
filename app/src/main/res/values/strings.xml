@@ -2,7 +2,8 @@
     <string name="app_name">일루와</string>
     <string name="title_activity_circle_button">CircleButton</string>
     <string name="str_done">완료</string>
-
+    <string name="app_google_play_store_link"></string>
+    <string name="app_market_link"></string>
     <string-array name="search_radius">
         <item>500m</item>
         <item>800m</item>
